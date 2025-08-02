@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fauxracle – Scan</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="floral-bg text-gray-900">
+    <video autoplay muted loop id="bg-video">
+    <source src="fauxracle/asset/video/galaxy.mp4.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+    </video>
+<script src="script.js"></script>
+
+  <section class="page-section py-20 px-6 max-w-5xl mx-auto">
+    <h2 class="text-4xl font-bold text-center mb-10" style="color: bisque;">📸 Scan Your Aura</h2>
+
+    <div class="grid md:grid-cols-2 gap-10">
+      <!-- Webcam Video -->
+      <div class="glass-card p-6">
+        <video id="webcam" autoplay playsinline class="rounded-xl w-full h-64 object-cover mb-4"></video>
+        <button onclick="capturePhoto()" class="w-full bg-pink-600 text-white py-3 rounded-xl" style="color: blanchedalmond;">📷 Capture Selfie</button>
+        <canvas id="snapshot" class="hidden mt-4 rounded-xl"></canvas>
+      </div>
+
+      <!-- Vibe Selection -->
+      <div class="glass-card p-6">
+        <h3 class="text-lg font-semibold mb-4">Choose Your Vibe</h3>
+        <div class="grid grid-cols-2 gap-4">
+          <button onclick="selectVibe('sunshine')" class="bg-red-500 text-white py-2 rounded-xl">😊 sunshine</button>
+          <button onclick="selectVibe('emo')" class="bg-black text-white py-2 rounded-xl">💔 emo</button>
+          <button onclick="selectVibe('quirky')" class="bg-blue-600 text-white py-2 rounded-xl">🌀 quirky</button>
+          <button onclick="selectVibe('trigger')" class="bg-indigo-500 text-white py-2 rounded-xl">🎲 trigger</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional: Instructions -->
+    <p id="statusMsg" class="text-center mt-8 text-lg text-gray-700 italic" style="color: bisque;">Step 1: Capture a selfie. Step 2: Choose your vibe.</p>
+  </section>
+
+  <script>
+    let selectedVibe = '';
+    let imageCaptured = false;
+
+    const video = document.getElementById('webcam');
+    const canvas = document.getElementById('snapshot');
+    const ctx = canvas.getContext('2d');
+
+    // Start webcam
+    if (video) {
+      navigator.mediaDevices.getUserMedia({ video: true })
+        .then(stream => {
+          video.srcObject = stream;
+        })
+        .catch(err => {
+          alert("Webcam access denied. Please allow camera permissions.");
+          console.error(err);
+        });
+    }
+
+    // Capture selfie
+    function capturePhoto() {
+      canvas.width = video.videoWidth;
+      canvas.height = video.videoHeight;
+      ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+      canvas.classList.remove('hidden');
+
+      const imgData = canvas.toDataURL();
+      localStorage.setItem('auraImage', imgData);
+      imageCaptured = true;
+      updateStatus();
+      maybeGoToResult();
+    }
+
+    // Select a vibe
+    function selectVibe(vibe) {
+      const vibes = {
+        sunshine: "🌞 You got a pocket full of sunshine!!",
+        emo: "🌑 WAKE ME UP INSIDE!CALL MY NAME AND SAVE ME FROM THE DARK",
+        quirky: "🌌 SHE wears short skirts,I wear Tshirts;)",
+        trigger: [
+          "🪩 bombastic sideye",
+          "🔥 QUEEN PERIODT",
+          "💧 amma manassu thanga manassu",
+          "⚡ lejjavathiye;)",
+          "THALLA VIBEE"
+        ][Math.floor(Math.random() * 5)]
+      };
+
+      selectedVibe = vibes[vibe] || "✨ Undefined Energy";
+      localStorage.setItem('auraVibe', selectedVibe);
+      updateStatus();
+      maybeGoToResult();
+    }
+
+    // Move to result page if both actions complete
+    function maybeGoToResult() {
+      if (selectedVibe && imageCaptured) {
+        window.location.href = 'result.html';
+      }
+    }
+
+    // Update user instructions
+    function updateStatus() {
+      const status = document.getElementById('statusMsg');
+      if (selectedVibe && imageCaptured) {
+        status.textContent = "✨ Preparing your aura...";
+      } else if (imageCaptured) {
+        status.textContent = "✅ Selfie captured. Now pick your vibe.";
+      } else if (selectedVibe) {
+        status.textContent = "✅ Vibe selected. Now capture your selfie.";
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Aura – Fauxracle</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Glowing pulse aura behind the selfie */
+    .aura-glow::before {
+      content: '';
+      position: absolute;
+      inset: -12px;
+      background: radial-gradient(circle, rgba(255, 0, 255, 0.4), transparent 70%);
+      border-radius: 9999px;
+      z-index: -1;
+      animation: pulse 4s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.5; }
+      50% { transform: scale(1.1); opacity: 1; }
+    }
+
+    /* Fade in text */
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 2s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    /* Sparkles floating around */
+    .sparkle {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background: white;
+      border-radius: 50%;
+      animation: sparkleAnim 6s infinite ease-in-out;
+    }
+
+    @keyframes sparkleAnim {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      50% { transform: translateY(-30px) scale(1.5); opacity: 0.5; }
+      100% { transform: translateY(0) scale(1); opacity: 1; }
+    }
+    #bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+  </style>
+</head>
+<body class="floral-bg text-gray-900 relative overflow-hidden">
+    <video autoplay muted loop id="bg-video">
+    <source src="fauxracle/asset/video/galaxy.mp4.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+    </video>
+  <section class="page-section py-20 px-6 max-w-3xl mx-auto text-center">
+    <h2 class="text-4xl font-bold mb-6 fade-in" style="color: bisque;">🌈 Your Aura Is...</h2>
+    <p class="text-xl mb-4 fade-in" id="auraResult" style="color: bisque;">Generating...</p>
+
+    <!-- Glowing aura wrapper -->
+    <div class="relative mx-auto w-60 h-60 aura-glow">
+      <img id="selfie" class="w-full h-full rounded-full object-cover shadow-xl" />
+    </div>
+
+    <div class="mt-10 fade-in">
+      <a href="scan.html" class="text-indigo-600 underline" style="color: bisque;">🔁 Try Again</a>
+    </div>
+  </section>
+  
+<script src="script.js"></script>
+
+
+  <!-- Sparkles (positioned randomly) -->
+  <div class="sparkle" style="top: 20%; left: 10%; animation-delay: 0s;"></div>
+  <div class="sparkle" style="top: 50%; left: 80%; animation-delay: 1s;"></div>
+  <div class="sparkle" style="top: 70%; left: 30%; animation-delay: 2s;"></div>
+  <div class="sparkle" style="top: 40%; left: 60%; animation-delay: 3s;"></div>
+  <div class="sparkle" style="top: 30%; left: 90%; animation-delay: 4s;"></div>
+
+  <script>
+    const vibe = localStorage.getItem('auraVibe') || '✨ Mysterious';
+    const img = localStorage.getItem('auraImage');
+    document.getElementById('auraResult').textContent = `💫 ${vibe}`;
+    if (img) document.getElementById('selfie').src = img;
+  </script>
+</body>
+</html>

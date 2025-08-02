@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fauxracle – Aura Scanner</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 1.5s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    .sparkle {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background: white;
+      border-radius: 50%;
+      opacity: 0.6;
+      animation: sparkleAnim 5s infinite ease-in-out;
+    }
+
+    @keyframes sparkleAnim {
+      0%, 100% { transform: translateY(0); opacity: 0.4; }
+      50% { transform: translateY(-20px) scale(1.4); opacity: 1; }
+    }
+    #bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+  </style>
+</head>
+<body class="floral-bg text-gray-900 relative overflow-hidden">
+    <video autoplay muted loop id="bg-video">
+    <source src="fauxracle/asset/video/galaxy.mp4.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+    </video>
+  <header class="min-h-screen flex flex-col justify-center items-center text-center px-6">
+    <h1 class="text-5xl md:text-6xl font-bold magazine-title mb-6 fade-in" style="color: rgb(251, 250, 251);">🔮 Fauxracle</h1>
+    <p class="text-lg md:text-xl max-w-xl mb-8 fade-in" style="color: bisque;">Reveal your fake cosmic aura through AI-powered nonsense. Completely useless, utterly beautiful.</p>
+    <a href="scan.html" class="bg-black text-white px-6 py-3 rounded-xl hover:bg-gray-800 transition fade-in">Start Scanning</a>
+  </header>
+  <!-- Optional sparkles -->
+  <div class="sparkle" style="top: 15%; left: 20%; animation-delay: 0s;"></div>
+  <div class="sparkle" style="top: 35%; left: 70%; animation-delay: 1s;"></div>
+  <div class="sparkle" style="top: 60%; left: 10%; animation-delay: 2s;"></div>
+  <div class="sparkle" style="top: 80%; left: 80%; animation-delay: 3s;"></div>
+   
+<script src="script.js"></script>
+
+  <script src="script.js"></script>
+</body>
+</html>

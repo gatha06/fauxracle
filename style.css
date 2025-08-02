@@ -1,0 +1,33 @@
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  background: linear-gradient(to bottom, #fff0f6, #e0f7ff);
+}
+h1, h2, h3, h4 {
+  font-family: 'Playfair Display', serif;
+}
+.magazine-title {
+  letter-spacing: -1px;
+}
+.glass-card {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+.floral-bg {
+  background-image: url('https://www.transparenttextures.com/patterns/flowers.png');
+  background-repeat: repeat;
+  background-size: 150px 150px;
+}
+.page-section {
+  scroll-margin-top: 80px;
+}
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
