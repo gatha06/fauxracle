@@ -1,5 +1,5 @@
-let selectedVibe = '';
-let imageCaptured = false;
+// let selectedVibe = '';
+// let imageCaptured = false;
 
 // Capture the webcam image and save to localStorage
 function capturePhoto() {
@@ -46,13 +46,13 @@ function pauseAudio() {
 }
 
 // Start Webcam
-if (document.getElementById('webcam')) {
-  navigator.mediaDevices.getUserMedia({ video: true })
-    .then(stream => {
-      document.getElementById('webcam').srcObject = stream;
-    })
-    .catch(err => {
-      alert("Webcam access denied. Please allow camera permissions.");
-      console.error(err);
-    });
-}
+// if (document.getElementById('webcam')) {
+//   navigator.mediaDevices.getUserMedia({ video: true })
+//     .then(stream => {
+//       document.getElementById('webcam').srcObject = stream;
+//     })
+//     .catch(err => {
+//       alert("Webcam access denied. Please allow camera permissions.");
+//       console.error(err);
+//     });
+// }

@@ -1,39 +1,37 @@
 <img width="3188" height="1202" alt="frame (3)" src="https://github.com/user-attachments/assets/517ad8e9-ad22-457d-9538-a9e62d137cd7" />
 
 
-# [Project Name] 🎯
+# [Project FAUXRACLE] 🎯
 
 
 ## Basic Details
-### Team Name: [Name]
-
-
-### Team Members
-- Team Lead: [Name] - [College]
-- Member 2: [Name] - [College]
-- Member 3: [Name] - [College]
+### Name: [Gatha R]
 
 ### Project Description
-[2-3 lines about what your project does]
+[Fauxracle is a fun and useless web app that scans your selfie and gives you a totally random aura reading.
+It acts like it knows your vibe, but really, it’s just guessing — with style. No real science, no accuracy — just pure chaotic energy for your entertainment.]
 
 ### The Problem (that doesn't exist)
-[What ridiculous problem are you solving?]
+[Fauxracle tackles the pressing crisis of spiritual FOMO by giving you an aura reading no one asked for.
+It solves the problem of having a face and not knowing what imaginary energy color it radiates.
+Finally — a tool for people who want vibes, not facts.]
 
 ### The Solution (that nobody asked for)
-[How are you solving it? Keep it fun!]
+[Fauxracle solves it by using your webcam to "analyze" your face and instantly generate a completely made-up aura.It combines random selection with overconfident delivery to make the result feel oddly believable.
+No data, no science — just chaotic fun dressed up as spiritual insight.]
 
 ## Technical Details
 ### Technologies/Components Used
 For Software:
-- [Languages used]
-- [Frameworks used]
-- [Libraries used]
-- [Tools used]
+- [HTML,CSS,JAVASCRIPT]
+- [Tailwind CSS,vanilla javascript]
+- [web APIs,Google Fonts]
+- [VS Code,Vercel,Git & Github,Figma,Browser DevTools]
 
 For Hardware:
-- [List main components]
-- [List specifications]
-- [List tools required]
+- [Laptop]
+- [Webcam]
+- [Mobile phone/internet connection]
 
 ### Implementation
 For Software:
