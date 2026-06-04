@@ -1,7 +1,7 @@
 <img width="3188" height="1202" alt="frame (3)" src="https://github.com/user-attachments/assets/517ad8e9-ad22-457d-9538-a9e62d137cd7" />
 
 
-# [Project FAUXRACLE] 🎯
+# [Project FAUXRACLE]
 
 
 ## Basic Details
@@ -91,7 +91,7 @@ For Hardware:
 - [Name 3]: [Specific contributions]
 
 ---
-Made with ❤️ at TinkerHub Useless Projects 
+Made with love at TinkerHub Useless Projects 
 
 ![Static Badge](https://img.shields.io/badge/TinkerHub-24?color=%23000000&link=https%3A%2F%2Fwww.tinkerhub.org%2F)
 ![Static Badge](https://img.shields.io/badge/UselessProjects--25-25?link=https%3A%2F%2Fwww.tinkerhub.org%2Fevents%2FQ2Q1TQKX6Q%2FUseless%2520Projects)

@@ -65,7 +65,7 @@
     Your browser does not support the video tag.
     </video>
   <section class="page-section py-20 px-6 max-w-3xl mx-auto text-center">
-    <h2 class="text-4xl font-bold mb-6 fade-in" style="color: bisque;">🌈 Your Aura Is...</h2>
+    <h2 class="text-4xl font-bold mb-6 fade-in" style="color: bisque;">Your Aura Is...</h2>
     <p class="text-xl mb-4 fade-in" id="auraResult" style="color: bisque;">Generating...</p>
 
     <!-- Glowing aura wrapper -->
@@ -74,7 +74,7 @@
     </div>
 
     <div class="mt-10 fade-in">
-      <a href="scan.html" class="text-indigo-600 underline" style="color: bisque;">🔁 Try Again</a>
+      <a href="scan.html" class="text-indigo-600 underline" style="color: bisque;">Try Again</a>
     </div>
   </section>
   
@@ -89,9 +89,9 @@
   <div class="sparkle" style="top: 30%; left: 90%; animation-delay: 4s;"></div>
 
   <script>
-    const vibe = localStorage.getItem('auraVibe') || '✨ Mysterious';
+    const vibe = localStorage.getItem('auraVibe') || 'Mysterious';
     const img = localStorage.getItem('auraImage');
-    document.getElementById('auraResult').textContent = `💫 ${vibe}`;
+    document.getElementById('auraResult').textContent = `${vibe}`;
     if (img) document.getElementById('selfie').src = img;
   </script>
 </body>

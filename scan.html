@@ -15,13 +15,13 @@
 <script src="script.js"></script>
 
   <section class="page-section py-20 px-6 max-w-5xl mx-auto">
-    <h2 class="text-4xl font-bold text-center mb-10" style="color: bisque;">📸 Scan Your Aura</h2>
+    <h2 class="text-4xl font-bold text-center mb-10" style="color: bisque;">Scan Your Aura</h2>
 
     <div class="grid md:grid-cols-2 gap-10">
       <!-- Webcam Video -->
       <div class="glass-card p-6">
         <video id="webcam" autoplay playsinline class="rounded-xl w-full h-64 object-cover mb-4"></video>
-        <button onclick="capturePhoto()" class="w-full bg-pink-600 text-white py-3 rounded-xl" style="color: blanchedalmond;">📷 Capture Selfie</button>
+        <button onclick="capturePhoto()" class="w-full bg-pink-600 text-white py-3 rounded-xl" style="color: blanchedalmond;">Capture Selfie</button>
         <canvas id="snapshot" class="hidden mt-4 rounded-xl"></canvas>
       </div>
 
@@ -29,10 +29,10 @@
       <div class="glass-card p-6">
         <h3 class="text-lg font-semibold mb-4">Choose Your Vibe</h3>
         <div class="grid grid-cols-2 gap-4">
-          <button onclick="selectVibe('sunshine')" class="bg-red-500 text-white py-2 rounded-xl">😊 sunshine</button>
-          <button onclick="selectVibe('emo')" class="bg-black text-white py-2 rounded-xl">💔 emo</button>
-          <button onclick="selectVibe('quirky')" class="bg-blue-600 text-white py-2 rounded-xl">🌀 quirky</button>
-          <button onclick="selectVibe('trigger')" class="bg-indigo-500 text-white py-2 rounded-xl">🎲 trigger</button>
+          <button onclick="selectVibe('sunshine')" class="bg-red-500 text-white py-2 rounded-xl">sunshine</button>
+          <button onclick="selectVibe('emo')" class="bg-black text-white py-2 rounded-xl">emo</button>
+          <button onclick="selectVibe('quirky')" class="bg-blue-600 text-white py-2 rounded-xl">quirky</button>
+          <button onclick="selectVibe('trigger')" class="bg-indigo-500 text-white py-2 rounded-xl">trigger</button>
         </div>
       </div>
     </div>
@@ -78,19 +78,19 @@
     // Select a vibe
     function selectVibe(vibe) {
       const vibes = {
-        sunshine: "🌞 You got a pocket full of sunshine!!",
-        emo: "🌑 WAKE ME UP INSIDE!CALL MY NAME AND SAVE ME FROM THE DARK",
-        quirky: "🌌 SHE wears short skirts,I wear Tshirts;)",
+        sunshine: "You got a pocket full of sunshine!!",
+        emo: "WAKE ME UP INSIDE!CALL MY NAME AND SAVE ME FROM THE DARK",
+        quirky: "SHE wears short skirts,I wear Tshirts;)",
         trigger: [
-          "🪩 bombastic sideye",
-          "🔥 QUEEN PERIODT",
-          "💧 amma manassu thanga manassu",
-          "⚡ lejjavathiye;)",
+          "bombastic sideye",
+          "QUEEN PERIODT",
+          "amma manassu thanga manassu",
+          "lejjavathiye;)",
           "THALLA VIBEE"
         ][Math.floor(Math.random() * 5)]
       };
 
-      selectedVibe = vibes[vibe] || "✨ Undefined Energy";
+      selectedVibe = vibes[vibe] || "Undefined Energy";
       localStorage.setItem('auraVibe', selectedVibe);
       updateStatus();
       maybeGoToResult();
@@ -107,11 +107,11 @@
     function updateStatus() {
       const status = document.getElementById('statusMsg');
       if (selectedVibe && imageCaptured) {
-        status.textContent = "✨ Preparing your aura...";
+        status.textContent = "Preparing your aura...";
       } else if (imageCaptured) {
-        status.textContent = "✅ Selfie captured. Now pick your vibe.";
+        status.textContent = "Selfie captured. Now pick your vibe.";
       } else if (selectedVibe) {
-        status.textContent = "✅ Vibe selected. Now capture your selfie.";
+        status.textContent = "Vibe selected. Now capture your selfie.";
       }
     }
   </script>
